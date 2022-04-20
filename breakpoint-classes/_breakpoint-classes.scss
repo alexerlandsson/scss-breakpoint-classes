@@ -1,0 +1,50 @@
+@use "sass:list";
+@use "sass:meta";
+
+$breakpoints: (
+  sm: (
+    min-width: 600px,
+  ),
+  lt-sm: (
+    max-width: 599px,
+  ),
+  md: (
+    min-width: 900px,
+  ),
+  lt-md: (
+    max-width: 899px,
+  ),
+  lg: (
+    min-width: 1200px,
+  ),
+  lt-lg: (
+    max-width: 1199px,
+  ),
+);
+
+@mixin breakpoint-classes(
+  $filter: (
+    sm,
+    lt-sm,
+    md,
+    lt-md,
+    lg,
+    lt-lg,
+  )
+) {
+  // Loop each breakpoint in $breakpoints to create it's unique selector
+  // The selectors uses the format ":[BREAKPOINT_NAME]"
+  @each $breakpoint-name, $media-query in $breakpoints {
+    // Check if breakpoint is included in $filter
+    @if list.index($filter, $breakpoint-name) {
+      // Use :is() with #breakpoint-important to increase specificity
+      :is(&\:#{$breakpoint-name}, #breakpoint-important) {
+        @media #{meta.inspect($media-query)} {
+          @content;
+        }
+      }
+    }
+  }
+
+  @content;
+}

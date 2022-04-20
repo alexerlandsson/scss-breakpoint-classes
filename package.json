@@ -1,0 +1,20 @@
+{
+  "name": "breakpoint-classes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./demo/demo.scss ./dist/demo.css",
+    "prettier": "prettier --write .",
+    "stylelint": "stylelint '**/*.scss'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.6.2",
+    "sass": "^1.50.1",
+    "stylelint": "^14.7.1",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^3.0.0"
+  }
+}

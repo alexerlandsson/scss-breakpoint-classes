@@ -1,0 +1,7 @@
+@use "../breakpoint-classes" as *;
+
+.demo {
+  @include breakpoint-classes((sm, lt-md)) {
+    color: red;
+  }
+}
