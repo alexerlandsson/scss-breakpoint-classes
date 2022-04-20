@@ -29,8 +29,8 @@ The example above will genereate breakpoint specific classes for all breakpoints
   }
 }
 
-@media (max-width: 899px) {
-  :is(.foo\:lt-md, #breakpoint-important) {
+@media (max-width: 599px) {
+  :is(.foo\:lt-sm, #breakpoint-important) {
     /* Styling */
   }
 }
